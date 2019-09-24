@@ -1,0 +1,204 @@
+main {
+    .hero-banner {
+        position: relative;
+        box-shadow: unset;
+        padding: 0;
+        margin: 0;
+        max-width: unset;
+        margin-bottom: -1rem;
+
+        .video-holder {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            video {
+                height: 100%;
+            }
+        }
+
+        .inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 0.5rem;
+            padding-top: 8rem;
+            padding-bottom: 5rem;
+
+            .opener {
+                color: white;
+                font-size: 12vw;
+                font-weight: 400;
+                margin-bottom: 2rem;
+                text-align: left;
+
+                span {
+                    font-size: 0.6em;
+                    font-weight: 200;
+                    display: block;
+                }
+            }
+
+            .upcoming-events {
+                h2 {
+                    color: white;
+                }
+
+                a {
+                    background-color: white;
+                    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+                    // padding: 1.25rem;
+                    margin-top: 1rem;
+                    transition: all 200ms;
+                    animation: moveinup 300ms;
+                    
+                    &:hover {
+                        transform: scale(1.01) translate(0, -3px);
+                        box-shadow: $hover-box;
+                    }
+
+                    .date {
+                        padding: 1.25rem;
+
+                        p {
+                            margin: 0;
+                            font-size: 1.5rem;
+                            font-weight: 400;
+                            font-family: 'Roboto Mono', monospace;
+                            
+                            span {
+                                font-size: 0.65em;
+                                font-weight: 400;
+                                display: block;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+
+                    .event {
+                        margin-right: 1.25rem;
+                        overflow: hidden;
+                        flex-grow: 1;
+
+                        h5 {
+                            white-space: nowrap;
+                            color: $purple;
+                            max-width: 100%;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+
+                        p {
+                            text-overflow: ellipsis;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    .event-categories {
+        margin-top: 1rem;
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+
+        .col-25 {
+            padding: 0.5rem;
+
+            &:nth-of-type(2n) {
+                .white-block {
+                    img {
+                        order: 2;
+                    }
+                }
+            }
+
+            .white-block {
+                flex-wrap: nowrap;
+                height: 100%;
+                cursor: pointer;
+                transition: all 200ms;
+
+                &:hover {
+                    transform: scale(1.01) translate(0, -3px);
+                    box-shadow: $hover-box;
+                }
+
+                img {
+                    width: 50%;
+                }
+
+                div {
+                    width: 50%;
+                }
+            }
+
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    main {
+        .hero-banner {
+            .inner {
+                padding: 8rem 2rem 5rem 2rem;
+
+                .opener {
+                    font-size: 7vw;
+                }
+
+                .upcoming-events {
+                    padding-left: 2rem;
+                }
+            }
+        }
+
+        .event-categories {
+            .col-25 {
+                .white-block {
+                    flex-wrap: wrap;
+
+                    img {
+                        width: 100%;
+                        order: 0 !important;
+                    }
+
+                    div {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1296px) {
+    main {
+        .hero-banner {
+            .inner {
+                .opener {
+                    font-size: 6rem;
+                }
+            }
+        }
+    }
+}
+
+@keyframes moveinup {
+    from {
+        transform: translateY(10px) scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,29 @@
+[
+    {
+        "_id": "1",
+        "title": "Techno hol",
+        "date": {
+            "day": "12",
+            "month": "jan"
+        },
+        "subtitle": "Rapper Sjors & Dj Didier"
+    },
+    {
+        "_id": "2",
+        "title": "Freaky Friday",
+        "date": {
+            "day": "25",
+            "month": "apr"
+        },
+        "subtitle": "Let's geht löss!"
+    },
+    {
+        "_id": "3",
+        "title": "Geen idee wat voor events er zijn, maar dit is een lange.",
+        "date": {
+            "day": "99",
+            "month": "sep"
+        },
+        "subtitle": "Jajaja heel veel tekst toch of niet dan !!!"
+    }
+]

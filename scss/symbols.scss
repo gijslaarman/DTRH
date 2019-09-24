@@ -1,0 +1,157 @@
+ul {
+    padding: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cta {
+    margin: 0.5em 0;
+    display: inline-block;
+    padding: 1em 1.5em;
+    color: white;
+    background-color: #8F0042;
+    border-radius: 50px;
+    transition: filter 200ms;
+    text-transform: uppercase;
+
+    &:hover {
+        filter: brightness(1.4);
+    }
+
+    &.negative {
+        background-color: white;
+        color: #8F0042;
+        border: 1px solid #8F0042;
+    }
+}
+
+.box {
+    box-shadow: $box-shadow;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+
+    &.justify-center {
+        justify-content: center;
+    }
+    &.justify-space-between {
+        justify-content: space-between;
+    }
+    &.align-center {
+        align-items: center;
+    }
+    &.no-wrap {
+        flex-wrap: nowrap;
+    }
+    &.column {
+        flex-direction: column;
+    }
+
+    .col-25, .col-50, .col-75, .col-100 {
+        // On mobile width columns are 100% wide
+        width: 100%;
+    }
+
+    .col-25.small, .col-50.small {
+        width: 50%;
+    }
+}
+
+.margin-top {
+    margin-top: 5rem;
+}
+
+.small-padding {
+    padding: 1rem;
+}
+.medium-padding {
+    padding: 2rem;
+}
+.large-padding {
+    padding: 3rem 2rem;
+}
+
+.white-block {
+    box-shadow: $box-shadow;
+    background-color: white;
+}
+
+.relative {
+    position: relative;
+}
+
+form {
+    fieldset {
+        border: none;
+        margin: 1em 0 0 0;
+
+        label {
+            display: block;
+        
+            input {
+                display: block;
+                width: 100%;
+                font-size: 1em;
+                margin-top: 0.5em;
+            }
+        }
+    }
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    background-color: unset;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+main {
+    section {
+        margin: 0 0.5em;
+        max-width: 1280px;
+        margin-bottom: 1em;
+    }
+}
+
+@media (min-width: 769px) {
+    .flex {
+        .col-25, .col-25.small {
+            width: 25%;
+        }
+
+        .col-50 {
+            width: 50%;
+        }
+
+        .col-75 {
+            width: 75%;
+        }
+    }
+}
+
+@media (min-width: 1296px) {
+    main { 
+        section {
+            margin: 0 auto;
+            margin-bottom: 1em;
+        }
+    }
+}

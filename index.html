@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/fa_all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Thema Avonden | Down the Rabbit Hole</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="assets/img/logo_white.png" alt="" class="logo">
+        </a>
+        <div class="menu-bg toggle-menu"></div>
+        <div class="menu">
+            <i class="fal fa-bars toggle-menu" id="menu-btn" style="color:white;"></i>
+            <nav id="header-menu">
+                <i class="fal close fa-times toggle-menu"></i>
+                <div class="inner">
+                    <ul>
+                        <li class="current-page">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="event-finder.html">Evenement Vinden</a>
+                        </li>
+                        <li>
+                            <a href="artists.html">Artiesten</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- <div class="language-selector">
+                        <h6>Taal</h6>
+                    </div> -->
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-banner">
+            <div class="video-holder">
+                <video autoplay muted loop>
+                    <source src="assets/img/bg_video_1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="inner flex justify-space-between align-center">
+                <h2 class="opener col-50"><strong>He jij!</strong><span>zin in een feestje?</span></h2>
+                <div class="upcoming-events col-50">
+                    <h2>Binnenkort:</h2>
+                    <div id="showcase-events"></div>
+
+                    <!-- <a href="" class="flex align-center no-wrap">
+                            <div class="date">
+                                <p>12 <span>jan</span></p>
+                            </div>
+                            <div class="event">
+                                <h5>Technohol</h5>
+                                <p>Rapper Sjors & dj didier</p>
+                            </div>
+                        </a> -->
+                </div>
+            </div>
+        </section>
+        <section class="white-block large-padding">
+            <h1>Ontdek de leukste Down the Rabbit Hole evenementen in de buurt, het hele jaar door!</h1>
+        </section>
+
+        <section>
+            <div class="flex event-categories">
+                <div class="col-25">
+                    <a href="event-finder.html?filter=music" class="white-block flex">
+                        <img src="./assets/img/music.png" alt="Afbeelding: Muziek">
+                        <div class="medium-padding flex justify-center column">
+                            <h3 class="text-center">Muziek</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-25">
+                    <a href="event-finder.html?filter=theater" class="white-block flex">
+                        <img src="./assets/img/theater.png" alt="Afbeelding: Theater">
+                        <div class="medium-padding flex justify-center column">
+                            <h3 class="text-center">Theater</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-25">
+                    <div class="white-block flex">
+                        <img src="./assets/img/art.png" alt="Afbeelding: Kunst">
+                        <div class="medium-padding flex justify-center column">
+                            <h3 class="text-center">Kunst</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-25">
+                    <div class="white-block flex">
+                        <img src="./assets/img/bbq.png" alt="Afbeelding: Barbeque">
+                        <div class="medium-padding flex justify-center column">
+                            <h3 class="text-center">BBQ</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="white-block">
+                <h2 class="medium-padding">De locaties van de evenementen</h2>
+                <div class="flex locations">
+                    <div class="col-25 small">
+                        <img src="assets/img/bbq.png" alt="">
+                    </div>
+                    <div class="col-25 small">
+                        <img src="assets/img/music.png" alt="">
+                    </div>
+                    <div class="col-25 small">
+                        <img src="assets/img/bbq.png" alt="">
+                    </div>
+                    <div class="col-25 small">
+                        <img src="assets/img/music.png" alt="">
+                    </div>
+                    <div class="col-25 small">
+                        <img src="assets/img/bbq.png" alt="">
+                    </div>
+                    <div class="col-25 small">
+                        <img src="assets/img/music.png" alt="">
+                    </div>
+                    <div class="col-25 small">
+                        <img src="assets/img/bbq.png" alt="">
+                    </div>
+                    <div class="col-25 small">
+                        <img src="assets/img/music.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="./scripts/homepage-events.js"></script>
+</body>
+</html>

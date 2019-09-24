@@ -1,0 +1,89 @@
+.sorting-bar {
+    #search {
+        background-color: $purple;
+        color: white;
+        z-index: 3;
+
+    }
+
+    input[type=search] {
+        border: 2px solid $purple;
+        background-color: white;
+        position: absolute;
+        width: 0;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        transition: all 500ms;
+        height: 100%;
+
+        &.active {
+            width: 100%;
+            padding-left: 4rem;
+            font-size: 1rem;
+            padding-right: 0.5rem;
+        }
+    }
+
+
+
+    .sorting {
+        flex-grow: 1;
+
+        button {
+            transition: all 200ms;
+
+            &:after {
+                display: inline-block;
+                content: "\f0d7";
+                font-family: 'Font Awesome 5 Pro';
+                font-weight: 700;
+                opacity: 0.2;
+                transition: all 200ms;
+            }
+            &.active {
+                background-color: $purple;
+                color: white;
+
+                &:after {
+                    opacity: 1;
+                }
+
+                &.reverse {
+                    &:after {
+                        transform: rotate(-180deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.filter {
+    height: 100vh;
+    width: 80vw;
+    background-color: $purple;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transform: translate(-100%, 0);
+    transition: transform 500ms;
+    max-width: 400px;
+    padding: 5rem 1rem 0;
+    overflow-y: scroll;
+
+    #filter-btn {
+        background-color: $purple;
+        position: absolute;
+        padding: 1rem 2rem;
+        color: white;
+        transform: translate(70%, -1rem) rotate(90deg);
+        right: 0;
+        bottom: 2rem;
+    }
+
+    &.active {
+        transform: translate(0, 0);
+    }
+}

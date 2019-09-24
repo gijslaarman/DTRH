@@ -1,0 +1,45 @@
+h1, h2, h3, h4, h5, h6, a, li, p {
+    color: #212121;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+
+}
+
+h3 {
+    font-size: 1.25em;
+}
+
+h4 {
+
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+a, li, p {
+    font-size: inherit;
+}
+
+a {
+    text-decoration: none;
+
+    &:visited {
+        color: inherit;
+    }
+}
+
+p {
+    margin-top: 0.5em;
+}
+
+@media (min-width: 769px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+}
