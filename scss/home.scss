@@ -50,55 +50,59 @@ main {
                     color: white;
                 }
 
-                a {
-                    background-color: white;
-                    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-                    // padding: 1.25rem;
-                    margin-top: 1rem;
-                    transition: all 200ms;
-                    animation: moveinup 300ms;
-                    
-                    &:hover {
-                        transform: scale(1.01) translate(0, -3px);
-                        box-shadow: $hover-box;
-                    }
+                #showcase-events {
+                    min-height: 308px;
 
-                    .date {
-                        padding: 1.25rem;
-
-                        p {
-                            margin: 0;
-                            font-size: 1.5rem;
-                            font-weight: 400;
-                            font-family: 'Roboto Mono', monospace;
-                            
-                            span {
-                                font-size: 0.65em;
+                    a {
+                        background-color: white;
+                        box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+                        // padding: 1.25rem;
+                        margin-top: 1rem;
+                        transition: all 200ms;
+                        animation: moveinup 300ms;
+                        
+                        &:hover {
+                            transform: scale(1.01) translate(0, -3px);
+                            box-shadow: $hover-box;
+                        }
+    
+                        .date {
+                            padding: 1.25rem;
+    
+                            p {
+                                margin: 0;
+                                font-size: 1.5rem;
                                 font-weight: 400;
-                                display: block;
-                                text-transform: uppercase;
+                                font-family: 'Roboto Mono', monospace;
+                                
+                                span {
+                                    font-size: 0.65em;
+                                    font-weight: 400;
+                                    display: block;
+                                    text-transform: uppercase;
+                                }
                             }
                         }
-                    }
-
-                    .event {
-                        margin-right: 1.25rem;
-                        overflow: hidden;
-                        flex-grow: 1;
-
-                        h5 {
-                            white-space: nowrap;
-                            color: $purple;
-                            max-width: 100%;
-                            text-overflow: ellipsis;
+    
+                        .event {
+                            margin-right: 1.25rem;
                             overflow: hidden;
+                            flex-grow: 1;
+    
+                            h5 {
+                                white-space: nowrap;
+                                color: $purple;
+                                max-width: 100%;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                            }
+    
+                            p {
+                                text-overflow: ellipsis;
+                            }
                         }
-
-                        p {
-                            text-overflow: ellipsis;
-                        }
+    
                     }
-
                 }
             }
         }
@@ -122,7 +126,6 @@ main {
 
             .white-block {
                 flex-wrap: nowrap;
-                height: 100%;
                 cursor: pointer;
                 transition: all 200ms;
 

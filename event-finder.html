@@ -28,40 +28,50 @@
                         <li class="current-page">
                             <a href="event-finder.html">Evenement Vinden</a>
                         </li>
-                        <li>
-                            <a href="artists.html">Artiesten</a>
-                        </li>
                     </ul>
-                    
-                    <!-- <div class="language-selector">
-                        <h6>Taal</h6>
-                    </div> -->
-
                 </div>
             </nav>
         </div>
     </header>
 
     <main class="margin-top">
-        <section>
+        <section class="flex">
             <div class="flex relative sorting-bar white-block">
                 <button id="search">
                     <i class="fas fa-search small-padding"></i>
                 </button>
-                <input id="search-form" type="search">
+                <input id="search-form" type="search" class>
                 <div class="sorting flex">
                     <button data="tips" class="col-50 small">
                         Tips
                     </button>
-                    <button data="soon" class="col-50 small">
+                    <button data="date" class="col-50 small active">
                         Soon
                     </button>
                 </div>
             </div>
+            <div class="flex relative filter-bar white-block">
+                <label class="active">
+                    Muziek
+                    <input type="checkbox" name="category" value="music" checked>
+                </label>
+                <label class="active">
+                    Theater
+                    <input type="checkbox" name="category" value="theater" checked>
+                </label>
+                <label class="active">
+                    Kunst
+                    <input type="checkbox" name="category" value="art" checked>
+                </label>
+                <label class="active">
+                    BBQ
+                    <input type="checkbox" name="category" value="bbq" checked>
+                </label>
+            </div>
         </section>
 
-        <section>
-
+        <section id="events">
+            <!-- Load items based on filter/sort -->
         </section>
     </main>
 
@@ -69,6 +79,7 @@
 
     </footer>
 
-    <script src="scripts.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/event-finder.js"></script>
 </body>
 </html>

@@ -15,7 +15,7 @@
         <a href="index.html" class="logo">
             <img src="assets/img/logo_white.png" alt="" class="logo">
         </a>
-        <div class="menu-bg toggle-menu"></div>
+        <div class="menu-bg toggle-menu"><!-- Empty div for background transition. --></div>
         <div class="menu">
             <i class="fal fa-bars toggle-menu" id="menu-btn" style="color:white;"></i>
             <nav id="header-menu">
@@ -28,14 +28,7 @@
                         <li>
                             <a href="event-finder.html">Evenement Vinden</a>
                         </li>
-                        <li>
-                            <a href="artists.html">Artiesten</a>
-                        </li>
                     </ul>
-                    
-                    <!-- <div class="language-selector">
-                        <h6>Taal</h6>
-                    </div> -->
                 </div>
             </nav>
         </div>
@@ -53,17 +46,19 @@
                 <h2 class="opener col-50"><strong>He jij!</strong><span>zin in een feestje?</span></h2>
                 <div class="upcoming-events col-50">
                     <h2>Binnenkort:</h2>
-                    <div id="showcase-events"></div>
-
-                    <!-- <a href="" class="flex align-center no-wrap">
-                            <div class="date">
-                                <p>12 <span>jan</span></p>
-                            </div>
-                            <div class="event">
-                                <h5>Technohol</h5>
-                                <p>Rapper Sjors & dj didier</p>
-                            </div>
-                        </a> -->
+                    <div id="showcase-events">
+                        <!-- Items get loaded in from javascript according to this template:
+                                <a href="" class="flex align-center no-wrap">
+                                    <div class="date">
+                                        <p>12 <span>jan</span></p>
+                                    </div>
+                                    <div class="event">
+                                        <h5>Technohol</h5>
+                                        <p>Rapper Sjors & dj didier</p>
+                                    </div>
+                                </a>
+                        -->
+                    </div>
                 </div>
             </div>
         </section>
@@ -108,7 +103,7 @@
             </div>
         </section>
 
-        <section>
+        <!-- <section>
             <div class="white-block">
                 <h2 class="medium-padding">De locaties van de evenementen</h2>
                 <div class="flex locations">
@@ -138,14 +133,14 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </main>
 
     <footer>
 
     </footer>
 
-    <script src="scripts.js"></script>
-    <script src="./scripts/homepage-events.js"></script>
+    <script src="./js/scripts.js"></script>
+    <script src="./js/homepage-events.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 
 !!!! THIS IS MOBILE FIRST !!!!
 */
@@ -181,10 +182,9 @@ header {
     cursor: pointer; }
   header nav {
     position: absolute;
-    right: 0;
+    right: -100%;
     top: 0;
-    transform: translate(110%, 0);
-    transition: transform 500ms ease;
+    transition: right 500ms ease;
     background-color: #212121;
     height: 100vh;
     width: 80vw;
@@ -202,7 +202,7 @@ header {
       font-size: 2em;
       transform: translate(-150%, -50%); }
     header nav.open {
-      transform: translate(0, 0); }
+      right: 0; }
     header nav .close {
       font-size: 2em;
       width: 100%;
@@ -302,39 +302,41 @@ main .hero-banner {
         display: block; }
     main .hero-banner .inner .upcoming-events h2 {
       color: white; }
-    main .hero-banner .inner .upcoming-events a {
-      background-color: white;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-      margin-top: 1rem;
-      transition: all 200ms;
-      animation: moveinup 300ms; }
-      main .hero-banner .inner .upcoming-events a:hover {
-        transform: scale(1.01) translate(0, -3px);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
-      main .hero-banner .inner .upcoming-events a .date {
-        padding: 1.25rem; }
-        main .hero-banner .inner .upcoming-events a .date p {
-          margin: 0;
-          font-size: 1.5rem;
-          font-weight: 400;
-          font-family: 'Roboto Mono', monospace; }
-          main .hero-banner .inner .upcoming-events a .date p span {
-            font-size: 0.65em;
+    main .hero-banner .inner .upcoming-events #showcase-events {
+      min-height: 308px; }
+      main .hero-banner .inner .upcoming-events #showcase-events a {
+        background-color: white;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+        margin-top: 1rem;
+        transition: all 200ms;
+        animation: moveinup 300ms; }
+        main .hero-banner .inner .upcoming-events #showcase-events a:hover {
+          transform: scale(1.01) translate(0, -3px);
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        main .hero-banner .inner .upcoming-events #showcase-events a .date {
+          padding: 1.25rem; }
+          main .hero-banner .inner .upcoming-events #showcase-events a .date p {
+            margin: 0;
+            font-size: 1.5rem;
             font-weight: 400;
-            display: block;
-            text-transform: uppercase; }
-      main .hero-banner .inner .upcoming-events a .event {
-        margin-right: 1.25rem;
-        overflow: hidden;
-        flex-grow: 1; }
-        main .hero-banner .inner .upcoming-events a .event h5 {
-          white-space: nowrap;
-          color: #8F0042;
-          max-width: 100%;
-          text-overflow: ellipsis;
-          overflow: hidden; }
-        main .hero-banner .inner .upcoming-events a .event p {
-          text-overflow: ellipsis; }
+            font-family: 'Roboto Mono', monospace; }
+            main .hero-banner .inner .upcoming-events #showcase-events a .date p span {
+              font-size: 0.65em;
+              font-weight: 400;
+              display: block;
+              text-transform: uppercase; }
+        main .hero-banner .inner .upcoming-events #showcase-events a .event {
+          margin-right: 1.25rem;
+          overflow: hidden;
+          flex-grow: 1; }
+          main .hero-banner .inner .upcoming-events #showcase-events a .event h5 {
+            white-space: nowrap;
+            color: #8F0042;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden; }
+          main .hero-banner .inner .upcoming-events #showcase-events a .event p {
+            text-overflow: ellipsis; }
 main .event-categories {
   margin-top: 1rem;
   margin-left: -0.5rem;
@@ -345,7 +347,6 @@ main .event-categories {
       order: 2; }
     main .event-categories .col-25 .white-block {
       flex-wrap: nowrap;
-      height: 100%;
       cursor: pointer;
       transition: all 200ms; }
       main .event-categories .col-25 .white-block:hover {
@@ -380,68 +381,109 @@ main .event-categories {
   to {
     transform: translateY(0) scale(1);
     opacity: 1; } }
-.sorting-bar #search {
-  background-color: #8F0042;
-  color: white;
-  z-index: 3; }
-.sorting-bar input[type=search] {
-  border: 2px solid #8F0042;
-  background-color: white;
-  position: absolute;
-  width: 0;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  transition: all 500ms;
-  height: 100%; }
-  .sorting-bar input[type=search].active {
-    width: 100%;
-    padding-left: 4rem;
-    font-size: 1rem;
-    padding-right: 0.5rem; }
-.sorting-bar .sorting {
-  flex-grow: 1; }
-  .sorting-bar .sorting button {
-    transition: all 200ms; }
-    .sorting-bar .sorting button:after {
-      display: inline-block;
-      content: "\f0d7";
-      font-family: 'Font Awesome 5 Pro';
-      font-weight: 700;
-      opacity: 0.2;
+.sorting-bar {
+  width: 100%; }
+  .sorting-bar #search {
+    background-color: #8F0042;
+    color: white;
+    z-index: 3; }
+  .sorting-bar input[type=search] {
+    border: 2px solid #8F0042;
+    background-color: white;
+    position: absolute;
+    width: 0;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: all 500ms;
+    height: 100%; }
+    .sorting-bar input[type=search].active {
+      width: 100%;
+      padding-left: 4rem;
+      font-size: 1rem;
+      padding-right: 0.5rem; }
+  .sorting-bar .sorting {
+    flex-grow: 1; }
+    .sorting-bar .sorting button {
       transition: all 200ms; }
-    .sorting-bar .sorting button.active {
+      .sorting-bar .sorting button:after {
+        display: inline-block;
+        content: "\f0d7";
+        font-family: 'Font Awesome 5 Pro';
+        font-weight: 700;
+        opacity: 0.2;
+        transition: all 200ms; }
+      .sorting-bar .sorting button.active {
+        background-color: #8F0042;
+        color: white; }
+        .sorting-bar .sorting button.active:after {
+          opacity: 1; }
+        .sorting-bar .sorting button.active.reverse:after {
+          transform: rotate(-180deg); }
+
+.filter-bar {
+  width: 100%; }
+  .filter-bar label {
+    width: 25%;
+    height: 100%;
+    cursor: pointer;
+    text-align: center;
+    padding: 15px 0;
+    background-color: transparent;
+    color: #212121;
+    transition: all 200ms; }
+    .filter-bar label:before {
+      content: "\f00d";
+      font-family: 'Font Awesome 5 Pro';
+      font-weight: 400;
+      padding-right: 0.25em; }
+    .filter-bar label input {
+      position: absolute;
+      height: 0;
+      width: 0;
+      top: 0;
+      left: 0;
+      visibility: hidden; }
+    .filter-bar label.active {
       background-color: #8F0042;
       color: white; }
-      .sorting-bar .sorting button.active:after {
-        opacity: 1; }
-      .sorting-bar .sorting button.active.reverse:after {
-        transform: rotate(-180deg); }
+      .filter-bar label.active:before {
+        content: ""; }
 
-.filter {
-  height: 100vh;
-  width: 80vw;
-  background-color: #8F0042;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  transform: translate(-100%, 0);
-  transition: transform 500ms;
-  max-width: 400px;
-  padding: 5rem 1rem 0;
-  overflow-y: scroll; }
-  .filter #filter-btn {
-    background-color: #8F0042;
-    position: absolute;
-    padding: 1rem 2rem;
-    color: white;
-    transform: translate(70%, -1rem) rotate(90deg);
-    right: 0;
-    bottom: 2rem; }
-  .filter.active {
-    transform: translate(0, 0); }
+#events a {
+  margin: 1em 0; }
+  #events a .date, #events a .tips {
+    padding: 0.5em 1em; }
+    #events a .date p, #events a .tips p {
+      margin: 0;
+      color: white;
+      font-weight: 400;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1.25em;
+      text-transform: uppercase; }
+  #events a .date {
+    background-color: #8F0042; }
+    #events a .date p span {
+      padding-left: 0.25em; }
+  #events a .tips {
+    flex-grow: 1;
+    background-color: #212121;
+    color: white; }
+    #events a .tips p:after {
+      content: "\f521";
+      font-family: 'Font Awesome 5 Pro';
+      font-weight: 700;
+      padding-left: 0.5em; }
+  #events a .event {
+    width: 100%;
+    padding: 1em; }
 
+@media (min-width: 1296px) {
+  .sorting-bar {
+    width: 50%; }
+
+  .filter-bar {
+    width: 50%; } }
 footer {
   background-color: #212121;
   padding: 1em; }

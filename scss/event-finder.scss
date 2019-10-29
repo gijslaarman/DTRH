@@ -1,4 +1,6 @@
 .sorting-bar {
+    width: 100%;
+
     #search {
         background-color: $purple;
         color: white;
@@ -59,31 +61,101 @@
     }
 }
 
-.filter {
-    height: 100vh;
-    width: 80vw;
-    background-color: $purple;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    transform: translate(-100%, 0);
-    transition: transform 500ms;
-    max-width: 400px;
-    padding: 5rem 1rem 0;
-    overflow-y: scroll;
+.filter-bar {
+    width: 100%;
 
-    #filter-btn {
-        background-color: $purple;
-        position: absolute;
-        padding: 1rem 2rem;
-        color: white;
-        transform: translate(70%, -1rem) rotate(90deg);
-        right: 0;
-        bottom: 2rem;
+    label {
+        width: 25%;
+        height: 100%;
+        cursor: pointer;
+        text-align: center;
+        padding: 15px 0;
+        background-color: transparent;
+        color: $black;
+        transition: all 200ms;
+
+        &:before {
+            content: "\f00d";
+            font-family: 'Font Awesome 5 Pro';
+            font-weight: 400;
+            padding-right: 0.25em;
+        }
+
+        input {
+            position: absolute;
+            height: 0;
+            width: 0;
+            top: 0;
+            left: 0;
+            visibility: hidden;
+        }
+
+        &.active {
+            background-color: $purple;
+            color: white;
+
+            &:before {
+                content: "\f00c"
+            }
+        }
+    }
+}
+
+#events {
+    a {
+        margin: 1em 0;
+
+        .date, .tips {
+            padding: 0.5em 1em;
+
+            p {
+                margin: 0;
+                color: white;
+                font-weight: 400;
+                font-family: 'Roboto Mono', monospace;
+                font-size: 1.25em;
+                text-transform: uppercase;
+            }
+        }
+
+        .date {
+            background-color: $purple;
+            
+            p {
+                span {
+                    padding-left: 0.25em;
+                }
+            }
+        }
+
+        .tips {
+            flex-grow: 1;
+            background-color: $black;
+            color: white;
+
+            p {
+                &:after {
+                    content: "\f521";
+                    font-family: 'Font Awesome 5 Pro';
+                    font-weight: 700;
+                    padding-left: 0.5em;
+                }
+            }
+        }
+
+        .event {
+            width: 100%;
+            padding: 1em
+        }
+    }
+}
+
+@media (min-width: 1296px) {
+    .sorting-bar {
+        width: 50%;
     }
 
-    &.active {
-        transform: translate(0, 0);
+    .filter-bar {
+        width: 50%;
     }
 }

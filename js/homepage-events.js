@@ -33,7 +33,6 @@ async function loadinevents() {
     const json = await data;
     const showcase = document.getElementById('showcase-events')
 
-    console.log(json)
     for (let i = 0; i < 3; i++) {
         // Maximum of 3 sorted by coming up next.
         const a = document.createElement('a');
