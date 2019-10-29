@@ -176,7 +176,7 @@ function loadEvents() {
         sorted = filtered.sort((a, b) => new Date(b.acf.date) - new Date(a.acf.date)).reverse()
     }
 
-    getSorting().direction === 'reverse' ? sorted.reverse() : sorted
+    getSorting().direction === 'reverse' ? sorted : sorted.reverse()
 
     return renderEvents(sorted)
 }

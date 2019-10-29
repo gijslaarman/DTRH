@@ -353,7 +353,8 @@ main .event-categories {
         transform: scale(1.01) translate(0, -3px);
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
       main .event-categories .col-25 .white-block img {
-        width: 50%; }
+        width: 50%;
+        object-fit: contain; }
       main .event-categories .col-25 .white-block div {
         width: 50%; }
 
