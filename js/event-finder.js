@@ -1,4 +1,19 @@
 const sortBtns = document.querySelectorAll('.sorting button')
+const filterBtns = document.querySelectorAll('input[name=category]')
+let data = []
+
+function onPageLand() {
+    let query = window.location.search.split('=')[1].split('+')
+    filterBtns.forEach(btn => {
+        if ( !query.includes(btn.value) ) {
+            btn.parentNode.classList.remove('active')
+            btn.checked = false
+        }
+    })
+
+    loadEvents()
+}
+
 sortBtns.forEach(btn => {
     btn.addEventListener('click', function () {
         // Filters out the other sort button and removes active class elements, so the sorting only returns one sort method.
@@ -27,7 +42,6 @@ sortBtns.forEach(btn => {
     })
 })
 
-const filterBtns = document.querySelectorAll('input[name=category]')
 filterBtns.forEach(btn => {
     btn.addEventListener('change', function () {
         this.parentNode.classList.toggle('active')
@@ -49,7 +63,6 @@ document.getElementById('search').addEventListener('click', function () {
 
 document.getElementById('search-form').addEventListener('keyup', loadEvents)
 
-let data = []
 
 function createElements(json) {
     // Create date array, [d, m, y]
@@ -171,4 +184,4 @@ function loadEvents() {
 fetch('https://api.gijslaarman.nl/wp-json/wp/v2/events')
     .then(result => result.json())
     .then(json => data = json)
-    .then(loadEvents)
+    .then(onPageLand)
