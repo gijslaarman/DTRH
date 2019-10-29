@@ -3,7 +3,7 @@ const filterBtns = document.querySelectorAll('input[name=category]')
 let data = []
 
 function onPageLand() {
-    if (window.location.query) {
+    if (window.location.search) {
         let query = window.location.search.split('=')[1].split('+')
         filterBtns.forEach(btn => {
             if ( !query.includes(btn.value) ) {
