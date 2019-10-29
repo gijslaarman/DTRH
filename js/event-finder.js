@@ -3,13 +3,15 @@ const filterBtns = document.querySelectorAll('input[name=category]')
 let data = []
 
 function onPageLand() {
-    let query = window.location.search.split('=')[1].split('+')
-    filterBtns.forEach(btn => {
-        if ( !query.includes(btn.value) ) {
-            btn.parentNode.classList.remove('active')
-            btn.checked = false
-        }
-    })
+    if (window.location.query) {
+        let query = window.location.search.split('=')[1].split('+')
+        filterBtns.forEach(btn => {
+            if ( !query.includes(btn.value) ) {
+                btn.parentNode.classList.remove('active')
+                btn.checked = false
+            }
+        })
+    }
 
     loadEvents()
 }
